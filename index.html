@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>İzmir 3B Galeri</title>
+<style>
+*{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071521;color:#fff;font-family:Inter,Segoe UI,Arial,sans-serif}
+body{touch-action:none}.app{width:100vw;height:100vh;min-height:560px;background:radial-gradient(circle at 45% 40%,#12354a 0,#0a2232 36%,#06141f 72%);display:grid;grid-template-columns:280px minmax(0,1fr) 420px;grid-template-rows:92px 1fr 70px;position:relative}
+header{grid-column:1/4;display:flex;align-items:center;padding:0 34px;border-bottom:1px solid #ffffff20;background:#06131dcc;backdrop-filter:blur(10px);z-index:5}.brand h1{margin:0;font-size:27px;letter-spacing:.5px}.brand p{margin:5px 0 0;color:#a9c5d5;font-size:14px}.accent{color:#f1b95c}
+.sidebar{padding:24px 18px;border-right:1px solid #ffffff18;background:#071722a8}.sidebar h2{font-size:14px;text-transform:uppercase;letter-spacing:2px;color:#87aabd;margin:0 8px 16px}.card{display:flex;gap:12px;align-items:center;width:100%;padding:11px;margin-bottom:12px;border:1px solid #ffffff18;border-radius:16px;background:#ffffff08;color:#fff;text-align:left;cursor:pointer;transition:.2s}.card:hover,.card.active{transform:translateX(4px);border-color:#e7b05eaa;background:#e7b05e14;box-shadow:0 8px 30px #0004}.thumb{width:78px;height:78px;border-radius:12px;background:linear-gradient(145deg,#183c4d,#0b1d28);display:grid;place-items:center;overflow:hidden}.thumb model-viewer{width:100%;height:100%;pointer-events:none}.card strong{display:block;font-size:17px}.card span{display:block;color:#9db8c7;font-size:12px;margin-top:5px;line-height:1.35}
+.viewer{position:relative;min-width:0;overflow:hidden}.viewer model-viewer{width:100%;height:100%;background:transparent;--poster-color:transparent}.hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);padding:9px 15px;border:1px solid #ffffff20;border-radius:999px;background:#06131dbd;color:#c7d9e2;font-size:13px;pointer-events:none;white-space:nowrap}.info{padding:30px 30px 24px;border-left:1px solid #ffffff18;background:#071722d9;overflow:auto}.kicker{color:#e7b05e;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700}.info h2{font-size:34px;margin:8px 0 5px}.life{color:#8fb0c0;margin-bottom:22px}.info p{font-size:15px;line-height:1.68;color:#d5e2e8}.facts{margin:20px 0 0;padding:0;list-style:none}.facts li{padding:14px 0;border-top:1px solid #ffffff14;font-size:14px;line-height:1.55;color:#c9d9e1}.facts b{color:#fff}.badge{display:inline-block;margin-top:20px;padding:8px 11px;border-radius:8px;background:#e7b05e17;border:1px solid #e7b05e50;color:#f1c87e;font-size:12px}
+footer{grid-column:1/4;border-top:1px solid #ffffff18;background:#06131dcc;display:flex;align-items:center;justify-content:space-between;padding:0 34px;color:#8faab9;font-size:12px}.controls{display:flex;gap:8px}.controls button{border:1px solid #ffffff20;background:#ffffff0b;color:#dce8ed;border-radius:10px;padding:8px 12px;cursor:pointer}.controls button:hover{background:#ffffff16}
+@media(max-width:1050px){.app{grid-template-columns:180px minmax(0,1fr) 320px}.info{padding:20px}.info h2{font-size:27px}.thumb{width:58px;height:58px}.card strong{font-size:14px}}
+@media(max-width:760px) and (orientation:portrait){body:before{content:'En iyi deneyim için cihazınızı yatay çevirin';position:fixed;inset:0;z-index:100;background:#071521;display:grid;place-items:center;text-align:center;padding:30px;font-size:20px;color:#fff}.app{display:none}}
+@media(max-width:900px) and (orientation:landscape){.app{grid-template-columns:155px minmax(0,1fr) 285px;grid-template-rows:60px 1fr 46px}.brand h1{font-size:19px}.brand p{display:none}.sidebar{padding:12px 8px}.sidebar h2{margin-bottom:8px}.card{padding:6px;margin-bottom:7px}.thumb{width:48px;height:48px}.card span{display:none}.info{padding:14px}.info h2{font-size:23px}.info p,.facts li{font-size:12px}.facts li{padding:7px 0}.life{margin-bottom:10px}header,footer{padding-left:18px;padding-right:18px}}
+</style>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><h1>İzmir <span class="accent">3B Galeri</span></h1><p>İzmir’in tarihi yapıları, simgeleri ve önemli şahsiyetleri • 3B keşif galerisi</p></div></header>
+<aside class="sidebar"><h2>3B Eserler</h2>
+<button class="card active" data-id="caka"><div class="thumb"><model-viewer src="models/cakabey.glb" camera-orbit="25deg 75deg auto" disable-zoom></model-viewer></div><div><strong>Çaka Bey</strong><span>İlk Türk amirali ve denizcisi</span></div></button>
+<button class="card" data-id="umur"><div class="thumb"><model-viewer src="models/gaziumurbey.glb" camera-orbit="25deg 75deg auto" disable-zoom></model-viewer></div><div><strong>Gazi Umur Bey</strong><span>Aydınoğulları'nın denizci hükümdarı</span></div></button>
+</aside>
+<main class="viewer"><model-viewer id="hero" src="models/cakabey.glb" alt="Çaka Bey 3B modeli" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="1.2" shadow-softness=".8" environment-image="neutral" exposure="1.05" min-camera-orbit="auto 20deg 70%" max-camera-orbit="auto 160deg 160%" camera-orbit="25deg 75deg 105%"></model-viewer><div class="hint">Sürükle: döndür • Tekerlek / iki parmak: yakınlaştır</div></main>
+<section class="info"><div class="kicker" id="kicker">Denizcilik Tarihi</div><h2 id="name">Çaka Bey</h2><div class="life" id="life">11. yüzyıl — ö. 1092</div><p id="summary"></p><ul class="facts" id="facts"></ul><div class="badge" id="badge"></div></section>
+<footer><span>1920 × 1080 sergi arayüzü • Mouse ve dokunmatik uyumlu</span><div class="controls"><button id="reset">Görünümü sıfırla</button><button id="rotate">Otomatik döndür</button></div></footer>
+</div>
+<script>
+const data={
+ caka:{name:'Çaka Bey',life:'11. yüzyıl — ö. 1092',model:'models/cakabey.glb',summary:'Çaka Bey, tarihteki ilk Türk amirali ve denizcisi olarak kabul edilen; 11. yüzyılda İzmir ve çevresinde bağımsız bir beylik kurmuş Türk komutanıdır.',facts:[['İlk Türk Donanması','Malazgirt Zaferi sonrasında Anadolu’ya gelen Çaka Bey, 1081’de İzmir’de kurduğu tersanede gemiler inşa ettirerek Türk denizcilik tarihinin ilk donanma teşkilatlanmalarından birini oluşturdu.'],['Doğu Roma dönemi ve yükselişi','Yaklaşık 1078’de Doğu Roma’ya esir düştü. Saray çevresinde bulunduğu dönemin ardından İzmir’e gelerek kendi siyasi hâkimiyetini kurdu.'],['Ege’deki faaliyetleri','Urla ve Foça ile Midilli, Sakız, Sisam ve Rodos gibi Ege adaları çevresinde askerî ve denizcilik faaliyetleri yürüttü; Doğu Roma kuvvetleriyle mücadele etti.']],badge:'İzmir merkezli erken Türk denizcilik tarihi'},
+ umur:{name:'Aydınoğlu Gazi Umur Bey',life:'1309/1310, Ödemiş — Mart 1348, İzmir',model:'models/gaziumurbey.glb',summary:'Umur Bey, Aydınoğulları Beyliği’nin ikinci ve en tanınmış hükümdarlarından; denizcilikte büyük ün kazanmış Türk askerî lideri ve devlet adamıdır.',facts:[['Aydınoğulları Beyliği','Babası Aydınoğlu Mehmed Bey’den sonra beyliğin yönetiminde öne çıktı ve Ege kıyılarındaki siyasi ve askerî gücü geliştirdi.'],['Denizcilik faaliyetleri','İzmir merkezli güçlü bir deniz gücü oluşturarak Ege Denizi’nde seferler düzenledi ve dönemin önemli denizci beylerinden biri oldu.'],['Haçlı kuvvetleriyle mücadele','14. yüzyılda Papalık öncülüğünde oluşturulan Haçlı kuvvetleriyle mücadele etti. 1348’de İzmir’deki çatışmalar sırasında hayatını kaybetti.']],badge:'14. yüzyıl Ege Türk denizciliğinin önemli adı'}
+};
+const hero=document.querySelector('#hero'), cards=[...document.querySelectorAll('.card')];
+function select(id){const d=data[id];hero.src=d.model;hero.alt=d.name+' 3B modeli';document.querySelector('#name').textContent=d.name;document.querySelector('#life').textContent=d.life;document.querySelector('#summary').textContent=d.summary;document.querySelector('#badge').textContent=d.badge;document.querySelector('#facts').innerHTML=d.facts.map(x=>`<li><b>${x[0]}:</b> ${x[1]}</li>`).join('');cards.forEach(c=>c.classList.toggle('active',c.dataset.id===id));hero.cameraOrbit='25deg 75deg 105%'}
+cards.forEach(c=>c.onclick=()=>select(c.dataset.id));
+document.querySelector('#reset').onclick=()=>hero.cameraOrbit='25deg 75deg 105%';
+let rotating=false;document.querySelector('#rotate').onclick=e=>{rotating=!rotating;hero.autoRotate=rotating;e.target.textContent=rotating?'Döndürmeyi durdur':'Otomatik döndür'};
+select('caka');
+</script>
+</body></html>
