@@ -2,18 +2,29 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>İzmir 3B Galeri</title>
 <style>
 *{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071521;color:#fff;font-family:Inter,Segoe UI,Arial,sans-serif}
 body{touch-action:none}.app{width:100vw;height:100vh;min-height:560px;background:radial-gradient(circle at 45% 40%,#12354a 0,#0a2232 36%,#06141f 72%);display:grid;grid-template-columns:280px minmax(0,1fr) 420px;grid-template-rows:92px 1fr 70px;position:relative}
 header{grid-column:1/4;display:flex;align-items:center;padding:0 34px;border-bottom:1px solid #ffffff20;background:#06131dcc;backdrop-filter:blur(10px);z-index:5}.brand h1{margin:0;font-size:27px;letter-spacing:.5px}.brand p{margin:5px 0 0;color:#a9c5d5;font-size:14px}.accent{color:#f1b95c}
 .sidebar{padding:24px 18px;border-right:1px solid #ffffff18;background:#071722a8;overflow:auto}.sidebar h2{font-size:14px;text-transform:uppercase;letter-spacing:2px;color:#87aabd;margin:0 8px 16px}.card{display:flex;gap:12px;align-items:center;width:100%;padding:11px;margin-bottom:12px;border:1px solid #ffffff18;border-radius:16px;background:#ffffff08;color:#fff;text-align:left;cursor:pointer;transition:.2s}.card:hover,.card.active{transform:translateX(4px);border-color:#e7b05eaa;background:#e7b05e14;box-shadow:0 8px 30px #0004}.thumb{width:78px;height:78px;border-radius:12px;background:linear-gradient(145deg,#183c4d,#0b1d28);display:grid;place-items:center;overflow:hidden}.thumb model-viewer{width:100%;height:100%;pointer-events:none}.card strong{display:block;font-size:17px}.card span{display:block;color:#9db8c7;font-size:12px;margin-top:5px;line-height:1.35}
-.viewer{position:relative;min-width:0;overflow:hidden}.viewer model-viewer{width:100%;height:100%;background:transparent;--poster-color:transparent}.hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);padding:9px 15px;border:1px solid #ffffff20;border-radius:999px;background:#06131dbd;color:#c7d9e2;font-size:13px;pointer-events:none;white-space:nowrap}.info{padding:30px 30px 24px;border-left:1px solid #ffffff18;background:#071722d9;overflow:auto}.kicker{color:#e7b05e;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700}.info h2{font-size:34px;margin:8px 0 5px}.life{color:#8fb0c0;margin-bottom:22px}.info p{font-size:15px;line-height:1.68;color:#d5e2e8}.facts{margin:20px 0 0;padding:0;list-style:none}.facts li{padding:14px 0;border-top:1px solid #ffffff14;font-size:14px;line-height:1.55;color:#c9d9e1}.facts b{color:#fff}.badge{display:inline-block;margin-top:20px;padding:8px 11px;border-radius:8px;background:#e7b05e17;border:1px solid #e7b05e50;color:#f1c87e;font-size:12px}
+.viewer{position:relative;min-width:0;overflow:hidden}.viewer::before{content:"";position:absolute;inset:0;background:url("siluet.png") center bottom/cover no-repeat;opacity:.16;pointer-events:none}.viewer model-viewer{position:relative;z-index:1;width:100%;height:100%;background:transparent;--poster-color:transparent}.hint{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);padding:9px 15px;border:1px solid #ffffff20;border-radius:999px;background:#06131dbd;color:#c7d9e2;font-size:13px;pointer-events:none;white-space:nowrap}.info{padding:30px 30px 24px;border-left:1px solid #ffffff18;background:#071722d9;overflow:auto}.kicker{color:#e7b05e;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700}.info h2{font-size:34px;margin:8px 0 5px}.life{color:#8fb0c0;margin-bottom:22px}.info p{font-size:15px;line-height:1.68;color:#d5e2e8}.facts{margin:20px 0 0;padding:0;list-style:none}.facts li{padding:14px 0;border-top:1px solid #ffffff14;font-size:14px;line-height:1.55;color:#c9d9e1}.facts b{color:#fff}.badge{display:inline-block;margin-top:20px;padding:8px 11px;border-radius:8px;background:#e7b05e17;border:1px solid #e7b05e50;color:#f1c87e;font-size:12px}
+.fullscreen-exit{display:none;position:absolute;z-index:3;top:12px;right:12px;border:1px solid #ffffff55;border-radius:10px;background:#06131ddd;color:#fff;padding:10px 14px;cursor:pointer}.viewer:fullscreen,.viewer.expanded{width:100vw!important;height:100dvh!important;min-height:0!important;background:#071521}.viewer:fullscreen .fullscreen-exit,.viewer.expanded .fullscreen-exit{display:block}.viewer.expanded{position:fixed;inset:0;z-index:100}
 footer{grid-column:1/4;border-top:1px solid #ffffff18;background:#06131dcc;display:flex;align-items:center;justify-content:space-between;padding:0 34px;color:#8faab9;font-size:12px}.controls{display:flex;gap:8px}.controls button{border:1px solid #ffffff20;background:#ffffff0b;color:#dce8ed;border-radius:10px;padding:8px 12px;cursor:pointer}.controls button:hover{background:#ffffff16}
 @media(max-width:1050px){.app{grid-template-columns:180px minmax(0,1fr) 320px}.info{padding:20px}.info h2{font-size:27px}.thumb{width:58px;height:58px}.card strong{font-size:14px}}
-@media(max-width:760px) and (orientation:portrait){body:before{content:'En iyi deneyim için cihazınızı yatay çevirin';position:fixed;inset:0;z-index:100;background:#071521;display:grid;place-items:center;text-align:center;padding:30px;font-size:20px;color:#fff}.app{display:none}}
-@media(max-width:900px) and (orientation:landscape){.app{grid-template-columns:155px minmax(0,1fr) 285px;grid-template-rows:60px 1fr 46px}.brand h1{font-size:19px}.brand p{display:none}.sidebar{padding:12px 8px}.sidebar h2{margin-bottom:8px}.card{padding:6px;margin-bottom:7px}.thumb{width:48px;height:48px}.card span{display:none}.info{padding:14px}.info h2{font-size:23px}.info p,.facts li{font-size:12px}.facts li{padding:7px 0}.life{margin-bottom:10px}header,footer{padding-left:18px;padding-right:18px}}
+@media(max-width:1200px) and (pointer:coarse), (max-width:760px){
+ html,body{height:auto;min-height:100%;overflow:auto}
+ body{touch-action:auto}
+ .app{width:100%;height:auto;min-height:100dvh;display:flex;flex-direction:column}
+ header{flex:none;min-height:56px;padding:10px 16px}.brand h1{font-size:21px}.brand p{display:none}
+ .sidebar{flex:none;display:flex;gap:8px;align-items:center;overflow-x:auto;overflow-y:hidden;padding:9px 12px;border-right:0;border-bottom:1px solid #ffffff18;scrollbar-width:thin}
+ .sidebar h2{display:none}.card{flex:0 0 auto;width:auto;min-width:135px;max-width:190px;min-height:68px;padding:7px;gap:8px;margin:0;border-radius:12px}.card:hover,.card.active{transform:none}.thumb{flex:none;width:50px;height:50px}.card strong{font-size:13px}.card span{display:none}
+ .viewer{flex:none;width:100%;height:max(300px,calc(100dvh - 190px));min-height:300px}
+ .hint{bottom:10px;font-size:11px;padding:6px 10px;max-width:calc(100% - 20px);white-space:normal;text-align:center}
+ footer{order:1;flex:none;min-height:54px;padding:7px 12px;justify-content:center}footer>span{display:none}.controls button{min-height:38px}
+ .info{order:2;flex:auto;overflow:visible;padding:20px 18px 32px;border-left:0;border-top:1px solid #ffffff18}.info h2{font-size:26px}.info p{font-size:14px}.facts li{font-size:13px}
+}
 </style>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
@@ -26,9 +37,9 @@ footer{grid-column:1/4;border-top:1px solid #ffffff18;background:#06131dcc;displ
 <button class="card" data-id="saat"><div class="thumb"><model-viewer src="models/saatkule-v3.glb" camera-orbit="25deg 75deg auto" disable-zoom></model-viewer></div><div><strong>İzmir Saat Kulesi</strong><span>Konak Meydanı'nın simgesi</span></div></button>
 <button class="card" data-id="kiyafet"><div class="thumb"><model-viewer src="models/kiyafet.glb" camera-orbit="25deg 75deg auto" disable-zoom></model-viewer></div><div><strong>İzmir Yöresel Kıyafetleri</strong><span>Zeybek kültürü ve Ege'nin giyim mirası</span></div></button>
 </aside>
-<main class="viewer"><model-viewer id="hero" src="models/cakabey.glb" alt="Çaka Bey 3B modeli" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="1.2" shadow-softness=".8" environment-image="neutral" exposure="1.05" min-camera-orbit="auto 20deg 70%" max-camera-orbit="auto 160deg 160%" camera-orbit="25deg 75deg 105%"></model-viewer><div class="hint">Sürükle: döndür • Tekerlek / iki parmak: yakınlaştır</div></main>
+<main class="viewer"><model-viewer id="hero" src="models/cakabey.glb" alt="Çaka Bey 3B modeli" camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="1.2" shadow-softness=".8" environment-image="neutral" exposure="1.05" min-camera-orbit="auto 20deg 70%" max-camera-orbit="auto 160deg 160%" camera-orbit="25deg 75deg 105%"></model-viewer><div class="hint">Sürükle: döndür • Tekerlek / iki parmak: yakınlaştır</div><button class="fullscreen-exit" id="fullscreen-exit" type="button">Tam ekrandan çık</button></main>
 <section class="info"><div class="kicker" id="kicker">Denizcilik Tarihi</div><h2 id="name">Çaka Bey</h2><div class="life" id="life">11. yüzyıl — ö. 1092</div><p id="summary"></p><ul class="facts" id="facts"></ul><div class="badge" id="badge"></div></section>
-<footer><span>1920 × 1080 sergi arayüzü • Mouse ve dokunmatik uyumlu</span><div class="controls"><button id="reset">Görünümü sıfırla</button><button id="rotate">Otomatik döndür</button></div></footer>
+<footer><span>1920 × 1080 sergi arayüzü • Mouse ve dokunmatik uyumlu</span><div class="controls"><button id="reset">Görünümü sıfırla</button><button id="rotate">Otomatik döndür</button><button id="fullscreen" type="button">Tam ekran</button></div></footer>
 </div>
 <script>
 const data={
@@ -42,6 +53,9 @@ function select(id){const d=data[id];hero.src=d.model;hero.alt=d.name+' 3B model
 cards.forEach(c=>c.onclick=()=>select(c.dataset.id));
 document.querySelector('#reset').onclick=()=>hero.cameraOrbit='25deg 75deg 105%';
 let rotating=false;document.querySelector('#rotate').onclick=e=>{rotating=!rotating;hero.autoRotate=rotating;e.target.textContent=rotating?'Döndürmeyi durdur':'Otomatik döndür'};
+const viewer=document.querySelector('.viewer');
+document.querySelector('#fullscreen').onclick=async()=>{try{if(viewer.requestFullscreen)await viewer.requestFullscreen();else viewer.classList.add('expanded')}catch{viewer.classList.add('expanded')}};
+document.querySelector('#fullscreen-exit').onclick=()=>{if(document.fullscreenElement)document.exitFullscreen();viewer.classList.remove('expanded')};
 select('caka');
 </script>
 </body></html>
